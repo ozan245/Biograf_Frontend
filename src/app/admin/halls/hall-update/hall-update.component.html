@@ -1,0 +1,24 @@
+<div class="container mt-4">
+    <h2>Update Hall</h2>
+    <ul class="list-group">
+      <li *ngFor="let hall of halls" class="list-group-item" (click)="selectHall(hall)">
+        {{ hall.name }} - Capacity: {{ hall.capacity }}
+      </li>
+    </ul>
+    <div *ngIf="selectedHall" class="mt-3">
+      <h4>Update {{ selectedHall.name }}</h4>
+      <div class="form-group">
+        <label for="newName">New Name</label>
+        <input type="text" id="newName" [(ngModel)]="selectedHall.name" class="form-control">
+      </div>
+      <div class="form-group mt-3">
+        <label for="capacity">New Capacity</label>
+        <input type="number" id="capacity" [(ngModel)]="selectedHall.capacity" class="form-control">
+      </div>
+      <button class="btn btn-primary mt-3" (click)="updateHall()">Update Hall</button>
+    </div>
+    <div *ngIf="message" [ngClass]="{'alert alert-success': !isError, 'alert alert-danger': isError}" class="mt-3">
+      {{ message }}
+    </div>
+  </div>
+  

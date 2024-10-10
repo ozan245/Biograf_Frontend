@@ -1,0 +1,166 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Select Your Seats</h2>
+
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{ errorMessage }}
+  </div>
+
+  <div class="seat-layout text-center">
+    <!-- Sıra A -->
+    <div class="seat-row">
+      <ng-container *ngFor="let seat of seats">
+        <div *ngIf="seat.row === 'A'" class="seat">
+          <button
+            class="btn seat-btn"
+            *ngIf="seat.id !== undefined"
+            [ngClass]="{
+              'btn-success': !seat.isReserved && !selectedSeats.includes(seat.id),
+              'btn-danger': seat.isReserved,
+              'btn-warning': selectedSeats.includes(seat.id)
+            }"
+            [disabled]="seat.isReserved"
+            (click)="toggleSeatSelection(seat.id)">
+            {{ seat.row }}{{ seat.number }}
+          </button>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="seat-row">
+      <ng-container *ngFor="let seat of seats">
+        <div *ngIf="seat.row === 'B'" class="seat">
+          <button
+            class="btn seat-btn"
+            *ngIf="seat.id !== undefined"
+            [ngClass]="{
+              'btn-success': !seat.isReserved && !selectedSeats.includes(seat.id),
+              'btn-danger': seat.isReserved,
+              'btn-warning': selectedSeats.includes(seat.id)
+            }"
+            [disabled]="seat.isReserved"
+            (click)="toggleSeatSelection(seat.id)">
+            {{ seat.row }}{{ seat.number }}
+          </button>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="seat-row">
+      <ng-container *ngFor="let seat of seats">
+        <div *ngIf="seat.row === 'C'" class="seat">
+          <button
+            class="btn seat-btn"
+            *ngIf="seat.id !== undefined"
+            [ngClass]="{
+              'btn-success': !seat.isReserved && !selectedSeats.includes(seat.id),
+              'btn-danger': seat.isReserved,
+              'btn-warning': selectedSeats.includes(seat.id)
+            }"
+            [disabled]="seat.isReserved"
+            (click)="toggleSeatSelection(seat.id)">
+            {{ seat.row }}{{ seat.number }}
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="text-center mt-5">
+    <button 
+      class="btn btn-primary"
+      [disabled]="selectedSeats.length === 0"
+      (click)="proceedToReservation()">
+      Go to Payment and Summary
+    </button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  

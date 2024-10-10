@@ -1,0 +1,16 @@
+<div class="container mt-4">
+    <h2>Delete Hall</h2>
+    <ul class="list-group">
+      <li *ngFor="let hall of halls" class="list-group-item" (click)="selectHall(hall)">
+        {{ hall.name }} - Capacity: {{ hall.capacity }}
+      </li>
+    </ul>
+    <div *ngIf="selectedHall" class="mt-3">
+      <h4>Are you sure you want to delete {{ selectedHall.name }}?</h4>
+      <button class="btn btn-danger mt-3" (click)="deleteHall()">Delete Hall</button>
+    </div>
+    <div *ngIf="message" [ngClass]="{'alert alert-success': !isError, 'alert alert-danger': isError}" class="mt-3">
+      {{ message }}
+    </div>
+  </div>
+  

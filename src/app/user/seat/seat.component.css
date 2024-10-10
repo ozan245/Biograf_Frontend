@@ -1,0 +1,32 @@
+.seat-layout {
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.seat-row {
+  display: flex;               
+  justify-content: center;      
+  margin-bottom: 10px;
+}
+
+.seat {
+  margin: 0 5px; 
+}
+
+.seat-btn {
+  width: 60px;
+  height: 60px;
+  font-size: 1.2rem;
+}
+
+.btn-warning {
+  color: #fff;
+}
+
+.mt-4 {
+  margin-top: 20px;
+}
+
+.mt-5 {
+  margin-top: 30px;
+}

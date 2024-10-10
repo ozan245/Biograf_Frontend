@@ -1,0 +1,20 @@
+<div class="container mt-4">
+    <h2>Add New Hall</h2>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" [(ngModel)]="hall.name" class="form-control" placeholder="Enter hall name">
+    </div>
+    <div class="form-group mt-3">
+      <label for="capacity">Capacity</label>
+      <input type="number" id="capacity" [(ngModel)]="hall.capacity" class="form-control" placeholder="Enter hall capacity">
+    </div>
+    <div class="form-group mt-3">
+      <label for="cinemaId">Cinema ID</label>
+      <input type="number" id="cinemaId" [(ngModel)]="hall.cinemaId" class="form-control" placeholder="Enter Cinema ID">
+    </div>
+    <button class="btn btn-primary mt-3" (click)="addHall()">Add Hall</button>
+    <div *ngIf="message" [ngClass]="{'alert alert-success': !isError, 'alert alert-danger': isError}" class="mt-3">
+      {{ message }}
+    </div>
+  </div>
+  

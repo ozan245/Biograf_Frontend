@@ -1,0 +1,123 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome (for icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap 3.3.7 JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div id="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">Bio Frontend</a>
+        </div>
+        <ul class="nav navbar-right top-nav">
+            <li><a class="" style="color: white;" *ngIf="email">WELCOME {{ email }}</a></li>
+            <li class="button">
+                <a (click)="logout()" class="dropdown-toggle" data-toggle="button">Logout</a>              
+            </li>
+        </ul>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+    
+                <li>
+                    <a href="javascript:void(0)" (click)="toggleMenu(7)" routerLink="dasharea">
+                        <i class=""></i> DASHBOARD 
+                        <i class="" [ngClass]="{'fa-angle-down': !isMenuOpen(7), 'fa-angle-right': isMenuOpen(7)}"></i>
+                    </a>                  
+                </li>
+
+          
+                <li>
+                    <a href="javascript:void(0)" (click)="toggleMenu(1)">
+                        <i class=""></i> MOVIES 
+                        <i class="fa fa-fw pull-right" [ngClass]="{'fa-angle-down': !isMenuOpen(1), 'fa-angle-right': isMenuOpen(1)}"></i>
+                    </a>
+                    <ul *ngIf="isMenuOpen(1)">
+                        <li><a routerLink="moviesadd"><i class="fa fa-angle-double-right"></i> Add New Movie</a></li>
+                        <li><a routerLink="moviesupdate"><i class="fa fa-angle-double-right"></i> Update Movie</a></li>
+                        <li><a routerLink="moviesdelete"><i class="fa fa-angle-double-right"></i> Delete Movie</a></li>
+                    </ul>
+                </li>
+
+                <!-- Menu 2 -->
+                <li>
+                    <a href="javascript:void(0)" (click)="toggleMenu(2)">
+                        <i class=""></i> GENRES 
+                        <i class="fa fa-fw pull-right" [ngClass]="{'fa-angle-down': !isMenuOpen(2), 'fa-angle-right': isMenuOpen(2)}"></i>
+                    </a>
+                    <ul *ngIf="isMenuOpen(2)">
+                        <li><a routerLink="genresadd"><i class="fa fa-angle-double-right"></i> Add New Genre</a></li>
+                        <li><a routerLink="genresupdate"><i class="fa fa-angle-double-right"></i> Update Genre</a></li>
+                        <li><a routerLink="genresdelete"><i class="fa fa-angle-double-right"></i> Delete Genre</a></li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="javascript:void(0)" (click)="toggleMenu(3)">
+                        <i class=""></i> CINEMAS 
+                        <i class="fa fa-fw pull-right" [ngClass]="{'fa-angle-down': !isMenuOpen(3), 'fa-angle-right': isMenuOpen(3)}"></i>
+                    </a>
+                    <ul *ngIf="isMenuOpen(3)">
+                        <li><a routerLink="cinemasadd"><i class="fa fa-angle-double-right"></i> Add New Cinema</a></li>
+                        <li><a routerLink="cinemasupdate"><i class="fa fa-angle-double-right"></i> Update Cinema</a></li>
+                        <li><a routerLink="cinemasdelete"><i class="fa fa-angle-double-right"></i> Delete Cinema</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0)" (click)="toggleMenu(4)">
+                        <i class=""></i> HALLS 
+                        <i class="fa fa-fw pull-right" [ngClass]="{'fa-angle-down': !isMenuOpen(4), 'fa-angle-right': isMenuOpen(4)}"></i>
+                    </a>
+                    <ul *ngIf="isMenuOpen(4)">
+                        <li><a routerLink="hallsadd"><i class="fa fa-angle-double-right"></i> Add New Hall</a></li>
+                        <li><a routerLink="hallsupdate"><i class="fa fa-angle-double-right"></i> Update Hall</a></li>
+                        <li><a routerLink="hallsdelete"><i class="fa fa-angle-double-right"></i> Delete Hall</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0)" (click)="toggleMenu(5)">
+                        <i class=""></i> SEATS 
+                        <i class="fa fa-fw pull-right" [ngClass]="{'fa-angle-down': !isMenuOpen(5), 'fa-angle-right': isMenuOpen(5)}"></i>
+                    </a>
+                    <ul *ngIf="isMenuOpen(5)">
+                        <li><a routerLink="seatsadd"><i class="fa fa-angle-double-right"></i> Add New Seat</a></li>
+                        <li><a routerLink="seatsupdate"><i class="fa fa-angle-double-right"></i> Update Seat</a></li>
+                        <li><a routerLink="seatsdelete"><i class="fa fa-angle-double-right"></i> Delete Seat</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0)" (click)="toggleMenu(6)">
+                        <i class=""></i> SHOWTIMES 
+                        <i class="fa fa-fw pull-right" [ngClass]="{'fa-angle-down': !isMenuOpen(6), 'fa-angle-right': isMenuOpen(6)}"></i>
+                    </a>
+                    <ul *ngIf="isMenuOpen(6)">
+                        <li><a routerLink="showtimesadd"><i class="fa fa-angle-double-right"></i> Add New Showtime</a></li>
+                        <li><a routerLink="showtimesupdate"><i class="fa fa-angle-double-right"></i> Update Showtime</a></li>
+                        <li><a routerLink="showtimesdelete"><i class="fa fa-angle-double-right"></i> Delete Showtime</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row" id="main">
+                <div class="col-sm-12 col-md-12 well" id="content">
+
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

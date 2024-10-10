@@ -1,0 +1,35 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+
+<div class="container mt-5">
+    <h2 class="mb-4">Select Cinema and Showtime</h2>
+  
+    <div class="form-group mb-4">
+      <label for="cinemaSelect">Select Cinema:</label>
+      <select id="cinemaSelect" class="form-control" [(ngModel)]="selectedCinemaId" (change)="onCinemaChange($event)">
+        <option value="">Select a cinema</option>
+        <option *ngFor="let cinema of cinemas" [value]="cinema.id">{{ cinema.name }} - {{ cinema.location }}</option>
+      </select>
+    </div>
+  
+    <div class="form-group mb-4" *ngIf="showtimes.length > 0">
+      <label for="showtimeSelect">Select Showtime:</label>
+      <select id="showtimeSelect" class="form-control" [(ngModel)]="selectedShowtimeId" (change)="onShowtimeChange($event)">
+        <option value="">Select a showtime</option>
+        <option *ngFor="let showtime of showtimes" [value]="showtime.id">
+          {{ showtime.time | date: 'short' }}
+        </option>
+      </select>
+    </div>
+  
+    <div *ngIf="errorMessage" class="alert alert-danger mt-4">
+      {{ errorMessage }}
+    </div>
+  
+    <div class="mt-4" *ngIf="selectedShowtimeId">
+      <button class="btn btn-primary w-100" (click)="proceedToSeatSelection()">Continue to Seat Selection</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,32 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+<div *ngIf="ticketDetails">
+    <div class="ticket-container">
+      <div class="ticket">
+        <div class="ticket-header">
+          <p><strong>Cinema:</strong> {{ ticketDetails.cinemaName }}</p>
+          <p><strong>Hall:</strong> {{ ticketDetails.hallName }}</p>
+        </div>
+        <div class="ticket-body">
+          <p><strong>Movie:</strong> {{ ticketDetails.movieTitle }}</p>
+          <p><strong>Showtime:</strong> {{ ticketDetails.showtimeTime | date: 'medium' }}</p>
+          <p><strong>Seats:</strong> {{ ticketDetails.seats.join(', ') }}</p>
+        </div>
+        <div class="ticket-footer">
+          <button class="btn-send" (click)="sendTicketToEmail()">
+            Send Ticket to Email
+          </button>
+          <button class="btn-home" (click)="goToHome()">
+            Go to Home
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="!ticketDetails">
+    <p>Loading ticket details...</p>
+  </div>
+  

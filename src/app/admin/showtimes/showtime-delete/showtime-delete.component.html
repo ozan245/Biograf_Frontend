@@ -1,0 +1,14 @@
+<div class="container mt-4">
+    <h2>Delete Showtime</h2>
+    <div class="form-group">
+      <label for="showtimeId">Showtime ID</label>
+      <input type="number" class="form-control" id="showtimeId" [(ngModel)]="showtimeId" placeholder="Enter Showtime ID">
+    </div>
+    <button class="btn btn-danger" (click)="deleteShowtime()">Delete Showtime</button>
+    <div *ngIf="message" class="mt-3">
+      <div [ngClass]="{'alert alert-success': !isError, 'alert alert-danger': isError}">
+        {{ message }}
+      </div>
+    </div>
+  </div>
+  

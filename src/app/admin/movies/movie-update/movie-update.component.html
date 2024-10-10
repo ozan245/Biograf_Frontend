@@ -1,0 +1,86 @@
+<div class="container mt-4">
+    <h2>Search and Update Movie</h2>
+  
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter movie title"
+      [(ngModel)]="searchTitle"
+      (input)="onSearch()"
+    />
+    
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{ errorMessage }}
+      </div>
+
+    <div *ngIf="movies.length > 0" class="mt-3">
+      <h3>Search Results</h3>
+      <ul class="list-group">
+        <li
+          *ngFor="let movie of movies"
+          class="list-group-item d-flex justify-content-between align-items-center"
+          (click)="selectMovie(movie)"
+        >
+          {{ movie.title }}
+          <button class="btn btn-primary btn-sm">Edit</button>
+        </li>
+      </ul>
+    </div>
+  
+    <div *ngIf="selectedMovie" class="mt-5">
+      <h3>Update Movie: {{ selectedMovie.title }}</h3>
+  
+      <form [formGroup]="movieForm" (ngSubmit)="submitForm()">
+        <div class="form-group row mb-3">
+          <label for="title" class="col-sm-2 col-form-label">Title</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="title" formControlName="title" />
+          </div>
+        </div>
+  
+        <div class="form-group row mb-3">
+          <label for="description" class="col-sm-2 col-form-label">Description</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" id="description" formControlName="description"></textarea>
+          </div>
+        </div>
+  
+        <div class="form-group row mb-3">
+          <label for="duration" class="col-sm-2 col-form-label">Duration (min)</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="duration" formControlName="duration" />
+          </div>
+        </div>
+  
+        <div class="form-group row mb-3">
+          <label for="isActive" class="col-sm-2 col-form-label">Active</label>
+          <div class="col-sm-10">
+            <input type="checkbox" class="form-check-input" id="isActive" formControlName="isActive" />
+            <label for="isActive">Is Active?</label>
+          </div>
+        </div>
+  
+        <div class="form-group row mb-3">
+          <label for="genreIds" class="col-sm-2 col-form-label">Genre IDs</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="genreIds" formControlName="genreIds" placeholder="Enter genre IDs (e.g., 1,2,3)" />
+          </div>
+        </div>
+  
+        <div class="form-group row mb-3">
+          <label for="imageFile" class="col-sm-2 col-form-label">Upload Image</label>
+          <div class="col-sm-10">
+            <input type="file" class="form-control" id="imageFile" (change)="onFileChange($event)" />
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary w-100">Update Movie</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+  

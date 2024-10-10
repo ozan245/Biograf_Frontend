@@ -1,0 +1,65 @@
+/* Body ve HTML'yi tam ortalamak için */
+body, html {
+    height: 100vh; /* Tam ekran yüksekliği */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(240, 236, 231);
+  }
+  
+  /* Kart stilini ortalamak için */
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 4rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center; /* İçeriği ortala */
+  }
+  
+  /* Başlık stilini belirleme */
+  .login-card h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Form kontrol odak stilini belirleme */
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #007bff;
+  }
+  
+  /* Buton stilini oluşturma */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Buton hover efekti */
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004b99;
+  }
+  
+  /* Hata mesajı stilini belirleme */
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+
+  .gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    }

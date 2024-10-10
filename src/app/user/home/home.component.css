@@ -1,0 +1,124 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  
+  .container-fluid {
+    background-color:white;
+    color: black; 
+    padding: 10px 50px 50px 50px;
+  }
+  
+  .card {
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  .card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+  .card-img-top {
+    height: 300px;
+    object-fit: cover; 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .scrollable {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .card-img-top {
+      height: 250px;
+    }
+  }
+  
+  
+
+.navbar {
+  padding: 15px; 
+  background-color: #343a40; 
+  width: 93%;
+  margin-left: 50px;
+}
+
+.navbar-brand {
+  width: 50px;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  margin-right: 130px;
+  margin-top: 25px;
+  margin-bottom: 30px;
+
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-nav.mx-auto {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  margin-right: 15px; 
+  height: 38px;
+  width: 400px;
+  max-width: 100%;
+}
+
+.genre-select {
+  height: 38px; 
+}
+
+.navbar-nav.ml-auto {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 38px;
+}
+
+.btn-outline-light {
+  height: 38px; 
+  padding: 7px 15px; 
+  color: black;
+  border-color: white;
+  background-color: white;
+  margin-left: 5px;
+}
+
+.btn-outline-light:hover {
+  background-color: cornsilk;
+  color: #343a40;
+}
+
+
+  

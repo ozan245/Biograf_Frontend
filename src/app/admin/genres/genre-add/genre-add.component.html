@@ -1,0 +1,14 @@
+<div class="container mt-4">
+    <h2>Add Genre</h2>
+    <div class="form-group">
+      <label for="genreName">Genre Name</label>
+      <input type="text" id="genreName" [(ngModel)]="genreName" class="form-control" placeholder="Genre Name">
+    </div>
+    <button class="btn btn-success mt-3" (click)="addGenre()">Add Genre</button>
+    <div *ngIf="message" class="mt-3">
+      <div [ngClass]="{'alert alert-success': !isError, 'alert alert-danger': isError}">
+        {{ message }}
+      </div>
+    </div>
+  </div>
+  

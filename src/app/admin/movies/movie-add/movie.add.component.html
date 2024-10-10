@@ -1,0 +1,74 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Add New Movie</h2>
+    <form [formGroup]="movieForm" (ngSubmit)="submitForm()" class="movie-form">
+      
+      <div class="form-group row mb-3">
+        <label for="title" class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="title" formControlName="title" placeholder="Enter movie title" />
+          <div *ngIf="movieForm.get('title')?.invalid && movieForm.get('title')?.touched" class="text-danger">
+            Title is required.
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group row mb-3">
+        <label for="description" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" id="description" rows="3" formControlName="description" placeholder="Enter movie description"></textarea>
+        </div>
+      </div>
+  
+      <div class="form-group row mb-3">
+        <label for="duration" class="col-sm-2 col-form-label">Duration (min)</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="duration" formControlName="duration" placeholder="Enter movie duration in minutes" />
+          <div *ngIf="movieForm.get('duration')?.invalid && movieForm.get('duration')?.touched" class="text-danger">
+            Duration is required.
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group row mb-3">
+        <label for="isActive" class="col-sm-2 col-form-label">Active</label>
+        <div class="col-sm-10 d-flex align-items-center">
+          <input type="checkbox" class="form-check-input" id="isActive" formControlName="isActive" />
+          <label class="form-check-label ms-2" for="isActive">Is Active?</label>
+        </div>
+      </div>
+  
+      <div class="form-group row mb-3">
+        <label for="imageFile" class="col-sm-2 col-form-label">Upload Image</label>
+        <div class="col-sm-10">
+          <input type="file" class="form-control" id="imageFile" (change)="onFileChange($event)" />
+        </div>
+      </div>
+  
+      <div class="form-group row mb-4">
+        <label for="genreIds" class="col-sm-2 col-form-label">Genre IDs</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="genreIds" formControlName="genreIds" placeholder="Enter genre IDs, e.g., 10, 20, 50" />
+          <small class="form-text text-muted">Separate multiple genre IDs with commas.</small>
+          <div *ngIf="movieForm.get('genreIds')?.invalid && movieForm.get('genreIds')?.touched" class="text-danger">
+            Please enter valid genre IDs.
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+          <button type="submit" class="btn btn-primary w-100" [disabled]="movieForm.invalid">Add Movie</button>
+        </div>
+      </div>
+
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+  
+    </form>
+  </div>
+  

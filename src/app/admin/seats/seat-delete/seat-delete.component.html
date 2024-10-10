@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <h2>Delete Seat</h2>
+  
+    <ul class="list-group">
+      <li *ngFor="let seat of seats" class="list-group-item" (click)="selectSeat(seat)">
+        Row: {{ seat.row }}, Number: {{ seat.number }}
+      </li>
+    </ul>
+  
+    <div *ngIf="selectedSeat" class="mt-3">
+      <h4>Delete Seat: Row {{ selectedSeat.row }}, Number {{ selectedSeat.number }}</h4>
+      <button class="btn btn-danger" (click)="deleteSeat()">Delete Seat</button>
+    </div>
+  
+    <div *ngIf="message" class="mt-3">
+      <div [ngClass]="{'alert alert-success': !isError, 'alert alert-danger': isError}">
+        {{ message }}
+      </div>
+    </div>
+  </div>
+  

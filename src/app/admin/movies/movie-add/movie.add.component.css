@@ -1,0 +1,55 @@
+/* movie-form.component.css */
+.container {
+    max-width: 700px;
+  }
+  
+  .movie-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+  }
+  
+  .form-control {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  .form-check-input {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .form-check-label {
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  button {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 1.2rem;
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+  
+  small.form-text {
+    font-size: 0.85rem;
+    color: #6c757d;
+  }
+  

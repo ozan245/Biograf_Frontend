@@ -1,0 +1,31 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+
+<div class="container mt-5">
+  <h2>Reservation Summary</h2>
+
+  <div *ngIf="showtimeDetails" class="card mb-4">
+    <div class="card-body">
+      <h4 class="card-title">{{ showtimeDetails.movieTitle }}</h4>
+      <p class="card-text">Cinema: {{ showtimeDetails.cinemaName }}</p>
+      <p class="card-text">Hall: {{ showtimeDetails.hallName }}</p>
+      <p class="card-text">Showtime: {{ showtimeDetails.time | date:'short' }}</p>
+      <p class="card-text">Selected Seats: {{ selectedSeats.join(', ') }}</p>
+    </div>
+  </div>
+
+  <h3>Payment</h3>
+  <form (ngSubmit)="processPayment()">
+    <div class="form-group">
+      <label for="cardNumber">Card Number</label>
+      <input type="text" id="cardNumber" class="form-control" [(ngModel)]="cardNumber" name="cardNumber" required>
+    </div>
+    <div class="form-group mt-3">
+      <button type="submit" class="btn btn-success w-100">Pay & Confirm Reservation</button>
+    </div>
+  </form>
+
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+</div>
